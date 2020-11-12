@@ -1,6 +1,30 @@
-@import './mixin.scss';
-@import './transition.scss';
+@charset "UTF-8";
+/* fade */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.28s;
+}
 
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+
+/* fade-transform */
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all .5s;
+}
+
+.fade-transform-enter {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
 
 /*320~360大小的屏幕时 */
 @media screen and (min-width: 320px) {
@@ -64,7 +88,6 @@
   }
 }
 
-
 body {
   background-color: salmon;
   height: 100%;
@@ -74,19 +97,15 @@ body {
   font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
 }
 
-
-
 label {
   font-weight: 700;
 }
 
 html {
-  // 基于iPhone6 width:375px
   font-size: 16px;
   height: 100%;
   box-sizing: border-box;
 }
-
 
 #app {
   height: 100%;
@@ -115,15 +134,11 @@ div:focus {
   outline: none;
 }
 
-.clearfix {
-  &:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0;
-  }
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
 }
-
-
