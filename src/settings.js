@@ -1,6 +1,13 @@
+/*
+ * @Author: zfd
+ * @Date: 2020-11-11 09:22:16
+ * @LastEditors: zfd
+ * @LastEditTime: 2020-11-12 16:16:16
+ * @Description:
+ */
 module.exports = {
 
-  title: 'Vue Admin Template',
+  title: '培训',
 
   /**
    * @type {boolean} true | false
