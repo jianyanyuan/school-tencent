@@ -10,6 +10,7 @@ import Vue from 'vue'
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 // import 'vant/lib/index.css'
 import '@/styles/index.scss' // global css
+import 'amfe-flexible'
 
 import App from './App'
 import store from './store'

@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-11 16:29:00
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-12 15:32:24
+ * @LastEditTime: 2020-11-12 15:59:23
  * @Description:
 -->
 <template>
@@ -73,7 +73,7 @@ export default {
 <style lang="scss" scoped>
 $bk: #fff;
 .my-head {
-  padding: 2.5rem 1.25rem;
+  padding: 40px 20px;
   background: #43C7FE;
   display: flex;
   justify-content: flex-start;
@@ -81,11 +81,11 @@ $bk: #fff;
   color: #fff;
   position: relative;
   .my-avatar {
-    width: 6.25rem;
-    height: 6.25rem;
+    width: 100px;
+    height: 100px;
     border: 5px solid #82DCFE;
     border-radius: 50%;
-    margin-right: 1.25rem;
+    margin-right: 20px;
     // text-align: center;
   }
   .my-avatar-img {
@@ -99,38 +99,38 @@ $bk: #fff;
   .my-login-btn {
     background: $bk;
     border: none;
-    border-radius: 0.3125rem;
-    padding: 0.625rem;
+    border-radius: 5px;
+    padding: 10px;
     color: #333;
   }
   .my-phone {
-    font-size: 1.5rem;
-    line-height: 2.5rem;
+    font-size: 24px;
+    line-height: 40px;
   }
   .my-id {
-    padding-left: 0.3em;
+    padding-left: 20px;
   }
   .next {
     position: absolute;
-    right: 1.25rem;
+    right: 20px;
   }
 }
 
 .my-tab-c {
   position: relative;
-  top: -1rem;
-  border-top-left-radius: 1.125rem;
-  border-top-right-radius: 1.125rem;
-  padding: 1.25rem;
-  // margin-bottom: 1.25rem;
+  top: -16px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  padding: 20px;
+  // margin-bottom: 20px;
   background: $bk;
 }
 .my-menu {
-  padding: 0 1.5rem;
+  padding: 0 24px;
   background: $bk;
 }
 .my-menu-item {
-  padding: 1.125rem 0;
+  padding: 18px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;

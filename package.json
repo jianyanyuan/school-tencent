@@ -14,6 +14,7 @@
     "test:ci": "npm run lint && npm run test:unit"
   },
   "dependencies": {
+    "amfe-flexible": "^2.2.1",
     "axios": "0.18.1",
     "core-js": "3.6.5",
     "js-cookie": "2.2.0",
@@ -42,6 +43,7 @@
     "eslint-plugin-vue": "6.2.2",
     "html-webpack-plugin": "3.2.0",
     "mockjs": "1.0.1-beta3",
+    "postcss-pxtorem": "^5.1.1",
     "runjs": "4.3.2",
     "sass": "1.26.8",
     "sass-loader": "8.0.2",
