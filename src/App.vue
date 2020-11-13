@@ -18,10 +18,9 @@ export default {
 </script>
 <style lang="scss">
 .app-container {
-  background: #F7F8FA;
   height: 100%;
 }
-.tab-page {
-  padding-bottom: 12.5rem;
-}
+// .tab-page {
+//   padding-bottom: 12.5rem;
+// }
 </style>

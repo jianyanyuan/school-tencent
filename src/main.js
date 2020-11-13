@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-11 09:22:16
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-12 15:41:15
+ * @LastEditTime: 2020-11-13 15:44:57
  * @Description:
  */
 import Vue from 'vue'
@@ -11,14 +11,15 @@ import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 // import 'vant/lib/index.css'
 import '@/styles/index.scss' // global css
 import 'amfe-flexible'
-
 import App from './App'
 import store from './store'
 import router from './router'
 
 import '@/icons' // icon
 import '@/permission' // permission control
-
+// import vant-component global
+import 'vant/lib/index.css'
+import '@/plugins/vant'
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api

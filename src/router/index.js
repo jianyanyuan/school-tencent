@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-11 09:22:16
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-12 09:30:10
+ * @LastEditTime: 2020-11-13 15:29:20
  * @Description:
  */
 import Vue from 'vue'
@@ -34,10 +34,20 @@ Vue.use(Router)
  * a base page that does not have permission requirements
  * all roles can be accessed
  */
+import Layout from '@/layout'
 export const constantRoutes = [
   {
     path: '/',
-    component: () => import('@/views/my/index.vue')
+    name: '/',
+    redirect: '/my',
+    component: Layout,
+    children: [
+      {
+        path: 'my',
+        name: 'my',
+        component: () => import('@/views/my/index.vue')
+      }
+    ]
   },
   {
     path: '/404',
