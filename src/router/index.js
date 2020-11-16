@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-11 09:22:16
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-13 15:29:20
+ * @LastEditTime: 2020-11-16 10:29:08
  * @Description:
  */
 import Vue from 'vue'
@@ -39,13 +39,18 @@ export const constantRoutes = [
   {
     path: '/',
     name: '/',
-    redirect: '/my',
+    redirect: '/my-info',
     component: Layout,
     children: [
       {
         path: 'my',
         name: 'my',
         component: () => import('@/views/my/index.vue')
+      },
+      {
+        path: 'my-info',
+        name: 'myInfo',
+        component: () => import('@/views/my/my.vue')
       }
     ]
   },
