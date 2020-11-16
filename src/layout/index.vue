@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-13 14:57:31
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-13 16:40:31
+ * @LastEditTime: 2020-11-16 16:29:00
  * @Description:
 -->
 <template>
@@ -13,12 +13,12 @@
 
       <span slot="right" class="app-school">苏州市建科培训</span>
     </nav-bar>
-    <popup v-model="showSideBar" position="left" class="app-sidebar" @close="onClose">
+    <van-popup v-model="showSideBar" position="left" class="app-sidebar" @close="onClose">
       <van-cell title="选课" icon="search" is-link />
       <van-cell title="我的课程" icon="newspaper-o" is-link />
       <van-cell title="我的订单" icon="orders-o" is-link />
       <van-cell title="我的信息" icon="smile-o" is-link />
-    </popup>
+    </van-popup>
 
     <section class="app-main">
       <transition name="fade-transform" mode="out-in">
@@ -30,13 +30,11 @@
 
 <script>
 // import { Dialog } from "vant";
-import { Popup } from 'vant'
 import { NavBar } from 'vant'
 
 export default {
   name: 'Layout',
   components: {
-    Popup,
     NavBar
   },
   filters: {

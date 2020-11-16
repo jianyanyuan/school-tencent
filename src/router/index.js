@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-11 09:22:16
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-16 10:29:08
+ * @LastEditTime: 2020-11-16 16:29:45
  * @Description:
  */
 import Vue from 'vue'
@@ -51,6 +51,34 @@ export const constantRoutes = [
         path: 'my-info',
         name: 'myInfo',
         component: () => import('@/views/my/my.vue')
+      }
+    ]
+  },
+  {
+    path: '/change',
+    name: 'change',
+    redirect: '/change/phone',
+    component: () => import('@/views/my/components/index.vue'),
+    children: [
+      {
+        path: 'phone',
+        name: 'changePhone',
+        component: () => import('@/views/my/components/phone.vue')
+      },
+      {
+        path: 'password',
+        name: 'changePassword',
+        component: () => import('@/views/my/components/password.vue')
+      },
+      {
+        path: 'idcard',
+        name: 'changeIdcard',
+        component: () => import('@/views/my/components/idcard.vue')
+      },
+      {
+        path: 'photo',
+        name: 'changePhoto',
+        component: () => import('@/views/my/components/photo.vue')
       }
     ]
   },

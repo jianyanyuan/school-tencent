@@ -2,12 +2,12 @@
  * @Author: zfd
  * @Date: 2020-11-11 16:29:00
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-16 14:25:12
+ * @LastEditTime: 2020-11-16 16:37:36
  * @Description: 个人信息页面
 -->
 <template>
   <div class="app-container setting-container">
-    <van-cell style="margin:20px 0" title="手机" is-link value="13776050390" />
+    <van-cell style="margin:20px 0" title="手机" is-link value="13776050390" to="/change/phone" />
     <van-cell-group @click="onClickInfo($event)">
       <van-cell title="姓名" name="name" :value="userInfo.name" />
       <van-cell title="性别" name="gender" :value="userInfo.gender" />
@@ -16,7 +16,7 @@
     </van-cell-group>
     <van-cell title="身份证" is-link />
     <van-cell title="个人照片" is-link />
-    <van-cell style="margin:20px 0" title="修改密码" is-link />
+    <van-cell style="margin:20px 0" title="修改密码" is-link to="/change/password" />
     <div class="login-out">登出</div>
     <action-sheet v-model="popup.name" title="修改姓名" class="setting-name">
       <input type="text" name="updateName" autocomplete="false" placeholder="请输入姓名">
@@ -27,7 +27,6 @@
     <van-popup v-model="popup.age" position="bottom">
       <datetime-picker type="year-month" title="选择出生年月" :min-date="minDate" :max-date="maxDate" :formatter="ageFormatter" @cancel="popup.age=false" @confirm="updateAge" />
     </van-popup>
-
   </div>
 </template>
 
@@ -113,7 +112,7 @@ $blue: #3598FE;
 }
 .login-out {
   background: $bk;
-  color: #ff1d55;
+  color: red;
   font-weight: bold;
   text-align: center;
   line-height: 40px;
