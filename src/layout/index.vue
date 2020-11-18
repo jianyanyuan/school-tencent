@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-13 14:57:31
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-18 10:35:12
+ * @LastEditTime: 2020-11-18 16:42:52
  * @Description:
 -->
 <template>
@@ -15,7 +15,7 @@
     </nav-bar>
     <van-popup v-model="showSideBar" position="left" class="app-sidebar" @click="showSideBar = false">
       <van-cell title="选课" icon="search" is-link to="/home" />
-      <van-cell title="我的课程" icon="newspaper-o" is-link />
+      <van-cell title="我的课程" icon="newspaper-o" is-link to="/my-subject" />
       <van-cell title="我的订单" icon="orders-o" is-link to="/order" />
       <van-cell title="我的信息" icon="smile-o" is-link to="/my-info" />
     </van-popup>

@@ -73,6 +73,14 @@ export const constantRoutes = [
         meta: {
           title: '我的订单'
         }
+      },
+      {
+        path: 'my-subject',
+        name: 'mySubject',
+        component: () => import('@/views/subject'),
+        meta: {
+          title: '我的课程'
+        }
       }
     ]
   },

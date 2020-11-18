@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-17 15:27:20
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-18 16:02:05
+ * @LastEditTime: 2020-11-18 16:14:40
  * @Description:
 -->
 <template>
@@ -28,8 +28,11 @@
       <tab title="配套资料">
         配套资料
       </tab>
+      <tab title="联系方式">
+        联系方式
+      </tab>
     </tabs>
-    <div class="s-d-purchase">
+    <div v-if="buyIt" class="s-d-purchase">
       <div class="s-d-p-l">
         <div class="s-d-p-m">￥2940</div>
         <div class="s-d-p-c">1191人购买</div>
@@ -58,7 +61,8 @@ export default {
         time: '2020/11/18 - 2021/01/01',
         hours: '450课时',
         amount: 9980
-      }
+      },
+      buyIt: true
       // order: {
       //   id: 1,
       //   subjects: [{ title: '2022建科培训你机构' }],
@@ -75,6 +79,13 @@ export default {
     onSubmit() {
 
     }
+  },
+  beforeRouteEnter(to, from, next) {
+    next(vm => {
+      if (to.params.buyIt === false) {
+        vm.buyIt = false
+      }
+    })
   }
 }
 </script>
