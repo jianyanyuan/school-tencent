@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-11 09:22:16
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-16 16:29:45
+ * @LastEditTime: 2020-11-18 14:49:41
  * @Description:
  */
 import Vue from 'vue'
@@ -39,18 +39,40 @@ export const constantRoutes = [
   {
     path: '/',
     name: '/',
-    redirect: '/my-info',
+    redirect: '/home',
     component: Layout,
     children: [
       {
+        path: 'home',
+        name: 'home',
+        component: () => import('@/views/home/index.vue'),
+        meta: {
+          title: '选课中心'
+        }
+      },
+      {
         path: 'my',
         name: 'my',
-        component: () => import('@/views/my/index.vue')
+        component: () => import('@/views/my/index.vue'),
+        meta: {
+          title: '登录/注册'
+        }
       },
       {
         path: 'my-info',
         name: 'myInfo',
-        component: () => import('@/views/my/my.vue')
+        component: () => import('@/views/my/my.vue'),
+        meta: {
+          title: '我的信息'
+        }
+      },
+      {
+        path: 'order',
+        name: 'Order',
+        component: () => import('@/views/order'),
+        meta: {
+          title: '我的订单'
+        }
       }
     ]
   },
@@ -58,27 +80,79 @@ export const constantRoutes = [
     path: '/change',
     name: 'change',
     redirect: '/change/phone',
-    component: () => import('@/views/my/components/index.vue'),
+    component: () => import('@/layout/index-nav.vue'),
     children: [
       {
         path: 'phone',
         name: 'changePhone',
-        component: () => import('@/views/my/components/phone.vue')
+        component: () => import('@/views/my/components/phone.vue'),
+        meta: {
+          title: '修改手机号'
+        }
       },
       {
         path: 'password',
         name: 'changePassword',
-        component: () => import('@/views/my/components/password.vue')
+        component: () => import('@/views/my/components/password.vue'),
+        meta: {
+          title: '修改密码'
+        }
       },
       {
         path: 'idcard',
         name: 'changeIdcard',
-        component: () => import('@/views/my/components/idcard.vue')
+        component: () => import('@/views/my/components/idcard.vue'),
+        meta: {
+          title: '上传身份证'
+        }
       },
       {
         path: 'photo',
         name: 'changePhoto',
-        component: () => import('@/views/my/components/photo.vue')
+        component: () => import('@/views/my/components/photo.vue'),
+        meta: {
+          title: '上传个人照片'
+        }
+      }
+    ]
+  },
+  {
+    path: '/order-sub',
+    name: 'orderSub',
+    redirect: '/order',
+    component: () => import('@/layout/index-nav.vue'),
+    children: [
+      {
+        path: 'detail',
+        name: 'orderDetail',
+        component: () => import('@/views/order/order-detail'),
+        meta: {
+          title: '订单详情'
+        }
+      },
+      {
+        path: 'create',
+        name: 'orderCreate',
+        component: () => import('@/views/order/order-create'),
+        meta: {
+          title: '生成订单'
+        }
+      }
+    ]
+  },
+  {
+    path: '/subject',
+    name: 'Subject',
+    redirect: '/home',
+    component: () => import('@/layout/index-nav.vue'),
+    children: [
+      {
+        path: 'detail',
+        name: 'subjectDetail',
+        component: () => import('@/views/home/detail'),
+        meta: {
+          title: '课程详情'
+        }
       }
     ]
   },

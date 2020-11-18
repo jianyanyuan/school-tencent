@@ -6,9 +6,10 @@
  * @Description:
  */
 import Vue from 'vue'
-import { Button, Icon, Cell, CellGroup, Popup } from 'vant'
+import { Button, Icon, Cell, CellGroup, Popup, Toast } from 'vant'
 Vue.use(Button)
 Vue.use(Cell)
 Vue.use(CellGroup)
 Vue.use(Popup)
 Vue.use(Icon)
+Vue.use(Toast)

@@ -70,17 +70,12 @@ $blue: #3598FE;
       height: 30px;
     }
     input {
-      color: #333;
-      border: none;
       font-size: 14px;
       border-radius: 5px;
       box-shadow: 0 2px 12px 0 rgba($color: #000000, $alpha: 0.1);
       width: 100%;
       height: 100%;
       padding: 0 10px 0 60px;
-      &:focus {
-        outline: none;
-      }
     }
 
   }

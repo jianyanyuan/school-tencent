@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-13 14:57:31
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-13 16:40:31
+ * @LastEditTime: 2020-11-18 14:47:35
  * @Description:
 -->
 <template>
@@ -33,12 +33,14 @@ export default {
 
   data() {
     return {
-      currentMenu: '修改手机号'
     }
   },
   computed: {
     key() {
       return this.$route.path
+    },
+    currentMenu() {
+      return this.$route.meta.title || ''
     }
   },
   mounted() {

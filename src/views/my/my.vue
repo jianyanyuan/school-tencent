@@ -2,20 +2,23 @@
  * @Author: zfd
  * @Date: 2020-11-11 16:29:00
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-16 16:37:36
+ * @LastEditTime: 2020-11-17 14:22:30
  * @Description: 个人信息页面
 -->
 <template>
   <div class="app-container setting-container">
     <van-cell style="margin:20px 0" title="手机" is-link value="13776050390" to="/change/phone" />
-    <van-cell-group @click="onClickInfo($event)">
+    <van-cell-group :border="false" @click="onClickInfo($event)">
       <van-cell title="姓名" name="name" :value="userInfo.name" />
       <van-cell title="性别" name="gender" :value="userInfo.gender" />
       <van-cell title="出生年月" name="age" :value="userInfo.age" />
-      <van-cell title="学历" name="education" :value="userInfo.education" />
+      <div class="setting-education">
+        <van-cell title="学历" name="education" :value="userInfo.education" />
+
+      </div>
     </van-cell-group>
-    <van-cell title="身份证" is-link />
-    <van-cell title="个人照片" is-link />
+    <van-cell title="身份证" is-link to="/change/idcard" />
+    <van-cell title="个人照片" is-link to="/change/photo" />
     <van-cell style="margin:20px 0" title="修改密码" is-link to="/change/password" />
     <div class="login-out">登出</div>
     <action-sheet v-model="popup.name" title="修改姓名" class="setting-name">
@@ -144,5 +147,21 @@ $blue: #3598FE;
     color: #fff;
     border: none;
   }
+}
+.setting-education {
+  position: relative;
+  &::after{
+      position: absolute;
+    box-sizing: border-box;
+    content: ' ';
+    pointer-events: none;
+    right: 0.42667rem;
+    bottom: 0;
+    left: 0.42667rem;
+    border-bottom: 0.02667rem solid #ebedf0 !important;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+  }
+
 }
 </style>

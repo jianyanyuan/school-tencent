@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-16 14:31:04
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-16 16:34:08
+ * @LastEditTime: 2020-11-17 13:16:58
  * @Description:
 -->
 <template>
@@ -91,16 +91,13 @@ $blue: #3598FE;
       height: 30px;
     }
     input {
-      color: #333;
-      border: none;
+
       border-radius: 5px;
       box-shadow: 0 2px 12px 0 rgba($color: #000000, $alpha: 0.1);
       width: 100%;
       height: 100%;
       padding: 0 10px 0 70px;
-      &:focus {
-        outline: none;
-      }
+
     }
     .phone-code-input {
       padding-right: 110px;

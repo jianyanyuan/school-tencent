@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-13 14:57:31
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-16 16:29:00
+ * @LastEditTime: 2020-11-18 10:35:12
  * @Description:
 -->
 <template>
@@ -13,11 +13,11 @@
 
       <span slot="right" class="app-school">苏州市建科培训</span>
     </nav-bar>
-    <van-popup v-model="showSideBar" position="left" class="app-sidebar" @close="onClose">
-      <van-cell title="选课" icon="search" is-link />
+    <van-popup v-model="showSideBar" position="left" class="app-sidebar" @click="showSideBar = false">
+      <van-cell title="选课" icon="search" is-link to="/home" />
       <van-cell title="我的课程" icon="newspaper-o" is-link />
-      <van-cell title="我的订单" icon="orders-o" is-link />
-      <van-cell title="我的信息" icon="smile-o" is-link />
+      <van-cell title="我的订单" icon="orders-o" is-link to="/order" />
+      <van-cell title="我的信息" icon="smile-o" is-link to="/my-info" />
     </van-popup>
 
     <section class="app-main">
@@ -42,13 +42,16 @@ export default {
 
   data() {
     return {
-      showSideBar: false,
-      currentMenu: '我的信息'
+      showSideBar: false
+      // currentMenu: '我的信息'
     }
   },
   computed: {
     key() {
       return this.$route.path
+    },
+    currentMenu() {
+      return this.$route.meta.title || ''
     }
   },
   mounted() {
@@ -59,10 +62,8 @@ export default {
   methods: {
     onClickLeft() {
       this.showSideBar = !this.showSideBar
-    },
-    onClose() {
-      this.showSideBar = false
     }
+
   }
 }
 </script>
