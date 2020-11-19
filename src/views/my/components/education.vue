@@ -2,13 +2,13 @@
  * @Author: zfd
  * @Date: 2020-11-11 16:29:00
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-19 09:45:16
+ * @LastEditTime: 2020-11-19 14:59:40
  * @Description: 个人信息页面
 -->
 <template>
   <div class="app-container setting-container">
     <van-cell-group @click="onClickInfo($event)">
-      <van-cell title="文化程度" name="education" :value="userInfo.education" />
+      <van-cell title="最高学历" name="education" :value="userInfo.education" />
       <van-cell title="毕业时间" name="graduateTime" :value="userInfo.graduateTime" />
       <van-cell title="证书" name="certificate" :value="userInfo.certificate" />
       <van-cell title="证书等级" name="rank" :value="userInfo.rank" />

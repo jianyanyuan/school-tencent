@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-16 14:31:50
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-19 13:32:01
+ * @LastEditTime: 2020-11-19 14:58:05
  * @Description:
 -->
 <template>
@@ -14,7 +14,7 @@
       <input type="text" placeholder="请输入身份证号码">
     </div> -->
     <van-cell-group @click="onClickInfo($event)">
-      <van-cell title="身份证号" name="idcard" :value="userInfo.idcard" />
+      <van-cell title="身份证号码" name="idcard" :value="userInfo.idcard" />
       <van-cell title="户籍所在地" name="address" :value="userInfo.address" />
       <van-cell title="身份证正反照" @click.stop="onClickCard" />
     </van-cell-group>

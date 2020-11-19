@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-17 15:27:20
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-19 10:19:04
+ * @LastEditTime: 2020-11-19 14:55:01
  * @Description:
 -->
 <template>
@@ -35,9 +35,9 @@
     <div v-if="buyIt" class="s-d-purchase">
       <div class="s-d-p-l">
         <div class="s-d-p-m">￥2940</div>
-        <div class="s-d-p-c">1191人购买</div>
+        <div class="s-d-p-c">1191人报名</div>
       </div>
-      <button class="s-d-p-r" @click="$router.push('/order-sub/create')">立即购买</button>
+      <button class="s-d-p-r" @click="$router.push('/order-sub/create')">立即报名</button>
     </div>
   </div>
 

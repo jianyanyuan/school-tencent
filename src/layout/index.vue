@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-13 14:57:31
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-19 14:14:14
+ * @LastEditTime: 2020-11-19 17:02:45
  * @Description:
 -->
 <template>
@@ -22,9 +22,9 @@
     </van-popup>
 
     <section class="app-main">
-      <transition name="fade-transform" mode="out-in">
-        <router-view :key="key" />
-      </transition>
+      <!-- <transition name="fade-transform" mode="out-in"> -->
+      <router-view :key="key" />
+      <!-- </transition> -->
     </section>
   </div>
 </template>
