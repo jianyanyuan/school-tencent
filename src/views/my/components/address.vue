@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-16 14:31:50
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-19 10:54:22
+ * @LastEditTime: 2020-11-19 13:45:20
  * @Description:
 -->
 <template>
@@ -48,12 +48,13 @@ export default {
     .address-item {
           color: #323233;
           p{
+            font-size: 14px;
+            font-weight: bold;
             text-indent: 5px;
             letter-spacing: 2px;
           }
           input {
-            font-size: 14px;
-            color: #323233;
+            color: #000;
             width: 100%;
             border-radius: 5px;
       box-shadow: 0 2px 12px 0 rgba($color: #000000, $alpha: 0.1);

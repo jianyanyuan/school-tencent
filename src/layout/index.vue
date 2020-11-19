@@ -2,13 +2,13 @@
  * @Author: zfd
  * @Date: 2020-11-13 14:57:31
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-18 16:42:52
+ * @LastEditTime: 2020-11-19 14:14:14
  * @Description:
 -->
 <template>
   <div class="app-wrapper">
     <nav-bar :fixed="true" :z-index="8" left-arrow class="app-navbar" @click-left="onClickLeft">
-      <van-icon slot="left" name="bars" color="#515151" size="30px" />
+      <van-icon slot="left" name="bars" color="#515151" class="app-icon" />
       <span slot="title">{{ currentMenu }}</span>
 
       <span slot="right" class="app-school">苏州市建科培训</span>
@@ -72,6 +72,7 @@ export default {
 <style lang="scss" scoped>
 .app-wrapper {
   min-height: 100%;
+
   // white-space: nowrap;
   // overflow-y: scroll;
   .app-navbar{

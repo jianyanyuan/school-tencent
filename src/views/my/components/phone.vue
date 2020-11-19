@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-16 14:31:04
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-17 13:16:58
+ * @LastEditTime: 2020-11-19 14:16:13
  * @Description:
 -->
 <template>
@@ -12,15 +12,15 @@
       <p>159 **** 0323</p>
     </div>
     <div class="phone-item">
-      <van-icon name="phone-circle-o" size="30px" />
+      <van-icon name="phone-circle-o" class="app-icon" />
       <span class="phone-item-line" />
-      <input type="phone" name="phone" autocomplete="false" placeholder="请输入新手机号">
+      <input type="phone" name="phone" autocomplete="off" placeholder="请输入新手机号">
     </div>
     <div class="phone-item">
-      <van-icon name="comment-circle-o" size="30px" />
+      <van-icon name="comment-circle-o" class="app-icon" />
       <span class="phone-item-line" />
 
-      <input type="text" name="code" autocomplete="false" class="phone-code-input">
+      <input type="text" name="code" autocomplete="off" class="phone-code-input">
       <div class="my-veritify">
         <button v-show="!vertifyDisable" @click="getVertification">获取验证码</button>
         <span v-show="vertifyDisable" class="my-veritify-wait">{{ countDown }} s后重试</span>
@@ -51,6 +51,9 @@ $inputHeight: 55px;
 $blue: #3598FE;
 
 .phone-container {
+  .phone-icon{
+    font-size: 30px;
+  }
   padding: 60px 30px;
   align-items: center;
   .phone-old p:nth-of-type(1) {
@@ -91,7 +94,7 @@ $blue: #3598FE;
       height: 30px;
     }
     input {
-
+      color: #000;
       border-radius: 5px;
       box-shadow: 0 2px 12px 0 rgba($color: #000000, $alpha: 0.1);
       width: 100%;

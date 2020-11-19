@@ -2,13 +2,13 @@
  * @Author: zfd
  * @Date: 2020-11-13 14:57:31
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-18 14:47:35
+ * @LastEditTime: 2020-11-19 14:20:08
  * @Description:
 -->
 <template>
   <div class="my-wrapper">
     <nav-bar :fixed="true" :z-index="8" left-arrow class="my-navbar" @click-left="onClickLeft">
-      <van-icon slot="left" name="arrow-left" color="#333" size="30px" />
+      <van-icon slot="left" name="arrow-left" color="#333" class="app-icon" />
       <span slot="title" class="my-title">{{ currentMenu }}</span>
     </nav-bar>
 

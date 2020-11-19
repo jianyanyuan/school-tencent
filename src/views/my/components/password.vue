@@ -2,18 +2,18 @@
  * @Author: zfd
  * @Date: 2020-11-16 14:31:04
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-16 16:42:35
+ * @LastEditTime: 2020-11-19 13:38:12
  * @Description:
 -->
 <template>
   <div class="password-container">
     <div class="password-item">
-      <van-icon name="phone-circle-o" size="30px" />
+      <van-icon name="info-o" class="app-icon" />
       <span class="password-item-line" />
       <input type="password" name="phone" autocomplete="false" placeholder="请设置新密码（6-12位数字与字母组合）">
     </div>
     <div class="password-item">
-      <van-icon name="phone-circle-o" size="30px" />
+      <van-icon name="info-o" class="app-icon" />
       <span class="password-item-line" />
       <input type="password" name="phone" autocomplete="false" placeholder="再次输入新密码">
     </div>
@@ -70,6 +70,7 @@ $blue: #3598FE;
       height: 30px;
     }
     input {
+      color: #000;
       font-size: 14px;
       border-radius: 5px;
       box-shadow: 0 2px 12px 0 rgba($color: #000000, $alpha: 0.1);

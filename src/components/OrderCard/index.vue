@@ -6,7 +6,7 @@
  * @Description:
 -->
 <template>
-  <div class="order-card" @click="$router.push('/order-sub/detail')">
+  <div class="order-card" @click="$router.push({name:'orderDetail',params:{isFinished}})">
     <p class="card-id">订单编号：{{ order.id }}</p>
     <ul>
       <li v-for="s in order.subjects" :key="s.title">

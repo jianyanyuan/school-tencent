@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-16 14:31:50
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-17 13:44:00
+ * @LastEditTime: 2020-11-19 13:32:01
  * @Description:
 -->
 <template>
@@ -16,18 +16,16 @@
     <van-cell-group @click="onClickInfo($event)">
       <van-cell title="身份证号" name="idcard" :value="userInfo.idcard" />
       <van-cell title="户籍所在地" name="address" :value="userInfo.address" />
-      <!-- <van-cell title="社保编号" name="age" :value="userInfo.age" />
-      <van-cell title="民族" name="nation" :value="userInfo.nation" /> -->
+      <van-cell title="身份证正反照" @click.stop="onClickCard" />
     </van-cell-group>
-    <action-sheet v-model="popup.name" title="修改身份证号" class="setting-name">
+    <action-sheet v-model="popup.idcard" title="修改身份证号" class="setting-name">
       <input type="text" name="idcard" autocomplete="false" placeholder="请输入姓名">
       <button @click="updateIdcard">保存</button>
     </action-sheet>
     <van-popup v-model="popup.address" position="bottom">
-      <van-area title="户籍" :area-list="areaList" @confirm="confirmAddress" />
+      <van-area title="户籍" :area-list="areaList" @confirm="confirmAddress" @cancel="popup.address = false" />
     </van-popup>
-    <p>身份证正反照</p>
-    <uploader v-model="fileList" class="idcard-upload" :before-read="beforeRead" :after-read="afterRead" upload-icon="plus">
+    <uploader ref="upload" v-model="fileList" class="idcard-upload" :before-read="beforeRead" :after-read="afterRead" upload-icon="plus">
       <template #preview-cover="{ file }">
         <div class="preview-cover van-ellipsis">{{ file.name }}</div>
       </template>
@@ -38,7 +36,7 @@
 
 <script>
 import { ActionSheet, Uploader, Area } from 'vant'
-
+import areaList from '@/utils/area'
 export default {
   name: 'ChangeIdcard',
   components: {
@@ -52,7 +50,15 @@ export default {
         idcard: '321323********4916',
         address: ''
       },
-      fileList: []
+      fileList: [],
+      areaList,
+      popup: {
+        name: false,
+        address: false,
+        idcard: false,
+        actions: [],
+        target: ''
+      }
       // { url: 'https://img.yzcdn.cn/vant/leaf.jpg', name: 'leaf' },
       // // Uploader 根据文件后缀来判断是否为图片文件
       // // 如果图片 URL 中不包含类型信息，可以添加 isImage 标记来声明
@@ -64,8 +70,24 @@ export default {
       this.userInfo.idcard = document.querySelector("input[name='idcard']").value
       this.popup.idcard = false
     },
+    onClickCard() {
+      this.$refs.upload.chooseFile()
+    },
+    // 修改点击事件
+    onClickInfo(event) {
+      const prop = event.target.parentNode.attributes.name || event.target.parentNode.parentNode.attributes.name
+      const props = ['idcard', 'address']
+      if (prop) {
+        // attribute对象
+        if (props.includes(prop.value)) {
+          this.popup[prop.value] = true
+        }
+      }
+      // this.show = true
+    },
     confirmAddress(address) {
-      console.log(address)
+      this.userInfo.address = address.map(v => v.name).join('/')
+      this.popup.address = false
     },
     // 返回 Promise
     async beforeRead(file, detail) {
@@ -96,7 +118,7 @@ export default {
 
 <style lang="scss" scoped>
 .idcard-container {
-  padding: 20px 20px;
+  padding: 20px 0;
   .idcard-basic {
           color: #8B8B8B;
           p{

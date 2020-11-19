@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-11 16:29:00
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-19 10:16:59
+ * @LastEditTime: 2020-11-19 13:32:50
  * @Description: 个人信息页面
 -->
 <template>
@@ -12,10 +12,10 @@
       <van-cell title="性别" name="gender" :value="userInfo.gender" />
       <van-cell title="出生年月" name="age" :value="userInfo.age" />
       <van-cell title="民族" name="nation" :value="userInfo.nation" />
-      <van-cell title="一寸照片" />
+      <van-cell title="一寸照片" @click.stop="onClickCard" />
 
     </van-cell-group>
-    <uploader v-model="fileList" class="photo-upload" :before-read="beforeRead" :after-read="afterRead" upload-icon="plus">
+    <uploader ref="upload" v-model="fileList" class="photo-upload" :before-read="beforeRead" :after-read="afterRead" upload-icon="plus">
       <template #preview-cover="{ file }">
         <div class="preview-cover van-ellipsis">{{ file.name }}</div>
       </template>
@@ -82,6 +82,9 @@ export default {
         }
       }
       // this.show = true
+    },
+    onClickCard() {
+      this.$refs.upload.chooseFile()
     },
     // 更新用户信息
     updateInfo(action, index) {

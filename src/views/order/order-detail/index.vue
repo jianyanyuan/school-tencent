@@ -2,14 +2,17 @@
  * @Author: zfd
  * @Date: 2020-11-17 15:27:20
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-18 16:56:38
+ * @LastEditTime: 2020-11-19 13:51:14
  * @Description:
 -->
 <template>
   <div class="order-detail">
-    <div class="o-d-s">
+    <div v-if="!order.isFinished" class="o-d-s">
       <p>待支付</p>
       <span>请在2天23小时59分25秒内完成付款，过期订单自动取消</span>
+    </div>
+    <div v-else class="o-d-s">
+      <p>支付已完成</p>
     </div>
     <div class="order-detail-m">
       <div class="o-d-c">
@@ -75,6 +78,14 @@ export default {
 
       ]
     }
+  },
+  beforeRouteEnter(to, from, next) {
+    next(vm => {
+      const isFinished = to.params.isFinished
+      if (typeof isFinished === 'boolean') {
+        vm.order.isFinished = isFinished
+      }
+    })
   }
 }
 </script>

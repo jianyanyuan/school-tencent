@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-11 09:22:16
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-19 10:33:57
+ * @LastEditTime: 2020-11-19 13:39:21
  * @Description:
  */
 import Vue from 'vue'
@@ -128,7 +128,7 @@ export const constantRoutes = [
         name: 'changeIdcard',
         component: () => import('@/views/my/components/idcard.vue'),
         meta: {
-          title: '上传身份证'
+          title: '修改身份信息'
         }
       },
       {
@@ -136,7 +136,7 @@ export const constantRoutes = [
         name: 'changeAddress',
         component: () => import('@/views/my/components/address.vue'),
         meta: {
-          title: '上传个人照片'
+          title: '修改地址'
         }
       }
     ]
