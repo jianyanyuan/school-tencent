@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-11 09:22:16
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-18 14:49:41
+ * @LastEditTime: 2020-11-19 10:33:57
  * @Description:
  */
 import Vue from 'vue'
@@ -84,12 +84,29 @@ export const constantRoutes = [
       }
     ]
   },
+
   {
     path: '/change',
     name: 'change',
     redirect: '/change/phone',
     component: () => import('@/layout/index-nav.vue'),
     children: [
+      {
+        path: 'basic',
+        name: 'changeBasic',
+        component: () => import('@/views/my/components/basic.vue'),
+        meta: {
+          title: '修改基础信息'
+        }
+      },
+      {
+        path: 'education',
+        name: 'changeEducation',
+        component: () => import('@/views/my/components/education.vue'),
+        meta: {
+          title: '修改文化程度'
+        }
+      },
       {
         path: 'phone',
         name: 'changePhone',
@@ -115,9 +132,9 @@ export const constantRoutes = [
         }
       },
       {
-        path: 'photo',
-        name: 'changePhoto',
-        component: () => import('@/views/my/components/photo.vue'),
+        path: 'address',
+        name: 'changeAddress',
+        component: () => import('@/views/my/components/address.vue'),
         meta: {
           title: '上传个人照片'
         }

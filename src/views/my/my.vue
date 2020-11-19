@@ -2,45 +2,47 @@
  * @Author: zfd
  * @Date: 2020-11-11 16:29:00
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-17 14:22:30
+ * @LastEditTime: 2020-11-19 10:17:18
  * @Description: 个人信息页面
 -->
 <template>
   <div class="app-container setting-container">
     <van-cell style="margin:20px 0" title="手机" is-link value="13776050390" to="/change/phone" />
-    <van-cell-group :border="false" @click="onClickInfo($event)">
-      <van-cell title="姓名" name="name" :value="userInfo.name" />
-      <van-cell title="性别" name="gender" :value="userInfo.gender" />
-      <van-cell title="出生年月" name="age" :value="userInfo.age" />
-      <div class="setting-education">
-        <van-cell title="学历" name="education" :value="userInfo.education" />
+    <!-- <van-cell-group :border="false" @click="onClickInfo($event)"> -->
+    <van-cell title="姓名" name="name" :value="userInfo.name" is-link to="/change/basic" />
+    <van-cell title="培训类别" name="training" :value="userInfo.training" @click="onClickTrain" />
+    <!-- <van-cell title="性别" name="gender" :value="userInfo.gender" /> -->
+    <!-- <van-cell title="出生年月" name="age" :value="userInfo.age" /> -->
+    <!-- <div class="setting-education"> -->
+    <van-cell title="文化程度" name="education" :value="userInfo.education" is-link to="/change/education" />
 
-      </div>
-    </van-cell-group>
+    <!-- </div> -->
+    <!-- </van-cell-group> -->
     <van-cell title="身份证" is-link to="/change/idcard" />
-    <van-cell title="个人照片" is-link to="/change/photo" />
+    <van-cell title="地址" is-link to="/change/address" />
+
     <van-cell style="margin:20px 0" title="修改密码" is-link to="/change/password" />
     <div class="login-out">登出</div>
-    <action-sheet v-model="popup.name" title="修改姓名" class="setting-name">
+    <!-- <action-sheet v-model="popup.name" title="修改姓名" class="setting-name">
       <input type="text" name="updateName" autocomplete="false" placeholder="请输入姓名">
       <button @click="updateName">保存</button>
-    </action-sheet>
-    <action-sheet v-model="popup.other" :actions="popup.actions" cancel-text="取消" close-on-click-action @cancel="popup.other = false" @select="updateInfo" />
+    </action-sheet> -->
+    <action-sheet v-model="popup.training" :actions="popup.actions" cancel-text="取消" close-on-click-action @cancel="popup.training = false" @select="updateInfo" />
     <!-- <action-sheet v-model="popup.education" :actions="$store.state.common.educationMap" cancel-text="取消" close-on-click-action @cancel="popup.education = false" @select="changeGender" /> -->
-    <van-popup v-model="popup.age" position="bottom">
+    <!-- <van-popup v-model="popup.age" position="bottom">
       <datetime-picker type="year-month" title="选择出生年月" :min-date="minDate" :max-date="maxDate" :formatter="ageFormatter" @cancel="popup.age=false" @confirm="updateAge" />
-    </van-popup>
+    </van-popup> -->
   </div>
 </template>
 
 <script>
-import { ActionSheet, DatetimePicker } from 'vant'
+import { ActionSheet } from 'vant'
 import { parseTime } from '@/utils'
 export default {
   name: 'My',
   components: {
-    ActionSheet,
-    DatetimePicker
+    ActionSheet
+
   },
   data() {
     return {
@@ -49,42 +51,29 @@ export default {
         name: '许王鹏',
         gender: '男',
         age: '1998年02月',
-        education: '本科'
+        education: '本科',
+        training: '免费职业培训'
       },
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 10, 1),
       currentDate: new Date(),
       popup: {
-        name: false,
-        age: false,
-        other: false,
-        actions: [],
-        target: ''
+        training: false,
+        actions: []
       }
     }
   },
   methods: {
     // 修改点击事件
-    onClickInfo(event) {
-      const prop = event.target.parentNode.attributes.name || event.target.parentNode.parentNode.attributes.name
-      const props = ['name', 'age', 'education', 'gender']
-      if (prop) {
-        // attribute对象
-        if (props.includes(prop.value)) {
-          if (prop.value === 'name' || prop.value === 'age') {
-            this.popup[prop.value] = true
-          } else {
-            this.popup.other = true
-            this.popup.actions = this.$store.state.common[`${prop.value}Map`]
-          }
-          this.popup.target = prop.value
-        }
-      }
+    onClickTrain(event) {
+      this.popup.training = true
+      this.popup.actions = this.$store.state.common.trainingMap
+
       // this.show = true
     },
     // 更新用户信息
     updateInfo(action, index) {
-      this.userInfo[this.popup.target] = action.name
+      this.userInfo.training = action.name
     },
     ageFormatter(type, val) {
       if (type === 'year') {

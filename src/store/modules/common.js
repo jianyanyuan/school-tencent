@@ -26,6 +26,28 @@ const state = {
     { id: 6, name: '高中' },
     { id: 7, name: '初中及以下' }
   ],
+  nationMap: [
+    { id: 0, name: '汉族' },
+    { id: 1, name: '苗族' },
+    { id: 2, name: '朝鲜族' },
+    { id: 3, name: '回族' },
+    { id: 4, name: '藏族' },
+    { id: 5, name: '维吾尔族' }
+  ],
+  certificateMap: [
+    { id: 1, name: '职业资格证书' },
+    { id: 2, name: '职业技能等级证书' },
+    { id: 3, name: '就业合格证书' }
+  ],
+  rankMap: [
+    { id: 0, name: '甲级' },
+    { id: 1, name: '乙级' },
+    { id: 2, name: '丙级' }
+  ],
+  trainingMap: [
+    { id: 0, name: '免费职业培训' },
+    { id: 1, name: '获证奖补培训' }
+  ],
   normalStatus: [
     { key: 0, val: '正常' },
     { key: 1, val: '禁用' },

@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-18 10:02:15
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-18 15:47:32
+ * @LastEditTime: 2020-11-19 10:26:18
  * @Description:
 -->
 <template>
@@ -184,6 +184,7 @@ $orange: #fd793f;
 .home-container {
   position: relative;
   .h-nav-sticky{
+      position: relative;
     height: 50px;
   }
   .h-nav {
@@ -258,6 +259,6 @@ $orange: #fd793f;
   height: 100%;
   overflow-y: auto;
   background-color: #fff;
-  z-index: 2025;
+  z-index: 2014;
 }
 </style>

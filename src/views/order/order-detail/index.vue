@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-17 15:27:20
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-17 16:35:01
+ * @LastEditTime: 2020-11-18 16:56:38
  * @Description:
 -->
 <template>
@@ -135,10 +135,12 @@ $orange: #FD793F;
   }
 
   .o-d-btn {
-    position: fixed;
-    bottom: 40px;
-    right: 10px;
-    // margin-top: 50px;
+    // position: fixed;
+    // bottom: 40px;
+    // right: 10px;
+    padding: 0 10px;
+    text-align: right;
+     margin-top: 40px;
     button {
       border-radius: 30px;
       padding: 5px 10px;

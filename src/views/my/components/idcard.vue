@@ -9,10 +9,24 @@
   <div class="idcard-container">
     <!-- <uploader v-model="fileList" multiple /> -->
     <!-- :before-read="beforeRead" :after-read="afterRead" :before-delete="deleteUpload" -->
-    <div class="idcard-basic">
+    <!-- <div class="idcard-basic">
       <p>身份证号</p>
       <input type="text" placeholder="请输入身份证号码">
-    </div>
+    </div> -->
+    <van-cell-group @click="onClickInfo($event)">
+      <van-cell title="身份证号" name="idcard" :value="userInfo.idcard" />
+      <van-cell title="户籍所在地" name="address" :value="userInfo.address" />
+      <!-- <van-cell title="社保编号" name="age" :value="userInfo.age" />
+      <van-cell title="民族" name="nation" :value="userInfo.nation" /> -->
+    </van-cell-group>
+    <action-sheet v-model="popup.name" title="修改身份证号" class="setting-name">
+      <input type="text" name="idcard" autocomplete="false" placeholder="请输入姓名">
+      <button @click="updateIdcard">保存</button>
+    </action-sheet>
+    <van-popup v-model="popup.address" position="bottom">
+      <van-area title="户籍" :area-list="areaList" @confirm="confirmAddress" />
+    </van-popup>
+    <p>身份证正反照</p>
     <uploader v-model="fileList" class="idcard-upload" :before-read="beforeRead" :after-read="afterRead" upload-icon="plus">
       <template #preview-cover="{ file }">
         <div class="preview-cover van-ellipsis">{{ file.name }}</div>
@@ -23,15 +37,21 @@
 </template>
 
 <script>
-import { Uploader } from 'vant'
+import { ActionSheet, Uploader, Area } from 'vant'
 
 export default {
   name: 'ChangeIdcard',
   components: {
-    Uploader
+    Uploader,
+    ActionSheet,
+    VanArea: Area
   },
   data() {
     return {
+      userInfo: {
+        idcard: '321323********4916',
+        address: ''
+      },
       fileList: []
       // { url: 'https://img.yzcdn.cn/vant/leaf.jpg', name: 'leaf' },
       // // Uploader 根据文件后缀来判断是否为图片文件
@@ -40,6 +60,13 @@ export default {
     }
   },
   methods: {
+    updateIdcard() {
+      this.userInfo.idcard = document.querySelector("input[name='idcard']").value
+      this.popup.idcard = false
+    },
+    confirmAddress(address) {
+      console.log(address)
+    },
     // 返回 Promise
     async beforeRead(file, detail) {
       return new Promise((resolve, reject) => {
@@ -101,6 +128,33 @@ export default {
   }
   // ::v-deep .van-uploader__upload {
   // }
+}
+.setting-name {
+  padding: 0 20px;
+  input {
+    margin: 30px 0 0;
+    width: 100%;
+    color: #333;
+    border: none;
+    border-bottom: 1px solid #333;
+    height: 40px;
+    padding-left: 10px;
+    &:focus {
+      outline: none;
+    }
+  }
+  button {
+    display: block;
+        width: 100%;
+
+    margin: 30px 0;
+    height: 38px;
+    letter-spacing: 1em;
+    background: #40A9FC;
+    border-radius: 8px;
+    color: #fff;
+    border: none;
+  }
 }
 .preview-cover {
   position: absolute;

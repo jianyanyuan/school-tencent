@@ -13,6 +13,7 @@
 
       <span slot="right" class="app-school">苏州市建科培训</span>
     </nav-bar>
+    <slot />
     <van-popup v-model="showSideBar" position="left" class="app-sidebar" @click="showSideBar = false">
       <van-cell title="选课" icon="search" is-link to="/home" />
       <van-cell title="我的课程" icon="newspaper-o" is-link to="/my-subject" />

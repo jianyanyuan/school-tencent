@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-17 15:27:20
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-18 16:14:40
+ * @LastEditTime: 2020-11-19 10:19:04
  * @Description:
 -->
 <template>
@@ -37,7 +37,7 @@
         <div class="s-d-p-m">￥2940</div>
         <div class="s-d-p-c">1191人购买</div>
       </div>
-      <button class="s-d-p-r">立即购买</button>
+      <button class="s-d-p-r" @click="$router.push('/order-sub/create')">立即购买</button>
     </div>
   </div>
 
