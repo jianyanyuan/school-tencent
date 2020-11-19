@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-17 15:27:20
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-18 09:06:19
+ * @LastEditTime: 2020-11-19 10:57:01
  * @Description:
 -->
 <template>
@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     onSubmit() {
-
+      this.$router.push('/order-sub/detail')
     }
   }
 }

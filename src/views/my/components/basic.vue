@@ -21,7 +21,7 @@
       </template>
     </uploader>
     <action-sheet v-model="popup.name" title="修改姓名" class="setting-name">
-      <input type="text" name="updateName" autocomplete="false" placeholder="请输入姓名">
+      <input type="text" name="updateName" autocomplete="off" placeholder="请输入姓名">
       <button @click="updateName">保存</button>
     </action-sheet>
     <action-sheet v-model="popup.other" :actions="popup.actions" cancel-text="取消" close-on-click-action @cancel="popup.other = false" @select="updateInfo" />

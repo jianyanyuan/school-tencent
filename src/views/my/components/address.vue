@@ -2,22 +2,22 @@
  * @Author: zfd
  * @Date: 2020-11-16 14:31:50
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-19 09:58:42
+ * @LastEditTime: 2020-11-19 10:54:22
  * @Description:
 -->
 <template>
   <div class="address-container">
     <div class="address-item">
       <p>社保编号</p>
-      <input type="text" placeholder="请输入社保编号">
+      <input type="text" placeholder="请输入社保编号" autocomplete="off">
     </div>
     <div class="address-item">
       <p>现家庭地址</p>
-      <input type="text" placeholder="请输入现家庭地址">
+      <input type="text" placeholder="请输入现家庭地址" autocomplete="off">
     </div>
     <div class="address-item">
       <p>就业单位</p>
-      <input type="text" placeholder="请输入就业单位">
+      <input type="text" placeholder="请输入就业单位" autocomplete="off">
     </div>
   </div>
 

@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-11 16:29:00
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-19 10:17:18
+ * @LastEditTime: 2020-11-19 10:47:53
  * @Description: 个人信息页面
 -->
 <template>
@@ -22,7 +22,7 @@
     <van-cell title="地址" is-link to="/change/address" />
 
     <van-cell style="margin:20px 0" title="修改密码" is-link to="/change/password" />
-    <div class="login-out">登出</div>
+    <div class="login-out" @click="clickLogOut">登出</div>
     <!-- <action-sheet v-model="popup.name" title="修改姓名" class="setting-name">
       <input type="text" name="updateName" autocomplete="false" placeholder="请输入姓名">
       <button @click="updateName">保存</button>
@@ -90,6 +90,10 @@ export default {
     updateName() {
       this.userInfo.name = document.querySelector("input[name='updateName']").value
       this.popup.name = false
+    },
+    async clickLogOut() {
+      await this.$store.dispatch('user/logout')
+      this.$router.push(`/login?redirect=${this.$route.fullPath}`)
     }
   }
 }

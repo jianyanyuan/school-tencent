@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-11 16:29:00
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-16 09:54:39
+ * @LastEditTime: 2020-11-19 10:54:59
  * @Description: 登录/注册页面
 -->
 <template>
@@ -11,23 +11,23 @@
     <div class="my-form">
       <div class="my-item">
         <label>手机号</label>
-        <input type="phone" name="phone" autocomplete="false" placeholder="请输入手机号">
+        <input type="phone" name="phone" autocomplete="off" placeholder="请输入手机号">
       </div>
       <div v-show="pwdLogin" class="my-item">
         <label>密码</label>
-        <input type="password" name="phone" autocomplete="false" placeholder="请输入密码">
+        <input type="password" name="phone" autocomplete="off" placeholder="请输入密码">
       </div>
       <!-- <div class="my-divider" /> -->
       <div v-show="!pwdLogin" class="my-item">
         <label>验证码</label>
-        <input type="text" name="code" autocomplete="false">
+        <input type="text" name="code" autocomplete="off">
         <div class="my-veritify">
           <button v-show="!vertifyDisable" @click="getVertification">获取验证码</button>
           <span v-show="vertifyDisable" class="my-veritify-wait">{{ countDown }} s后重试</span>
         </div>
       </div>
       <div class="my-link" @click="pwdLogin = !pwdLogin">{{ pwdLogin === true ? '验证码登录' : '账户密码登录' }}</div>
-      <button class="my-submit">登 录</button>
+      <button class="my-submit" @click="$router.push('/my-info')">登 录</button>
     </div>
   </div>
 </template>
@@ -100,7 +100,7 @@ button {
     position: relative;
     display: flex;
     align-items: center;
-    color: #C7C7C7;
+    color: #898989;
     input {
       color: #333;
       border: none;
