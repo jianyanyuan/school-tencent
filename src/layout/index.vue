@@ -2,18 +2,17 @@
  * @Author: zfd
  * @Date: 2020-11-13 14:57:31
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-19 17:02:45
+ * @LastEditTime: 2020-11-20 16:05:28
  * @Description:
 -->
 <template>
   <div class="app-wrapper">
     <nav-bar :fixed="true" :z-index="8" left-arrow class="app-navbar" @click-left="onClickLeft">
       <van-icon slot="left" name="bars" color="#515151" class="app-icon" />
-      <span slot="title">{{ currentMenu }}</span>
+      <span slot="title" class="app-title">{{ currentMenu }}</span>
 
       <span slot="right" class="app-school">苏州市建科培训</span>
     </nav-bar>
-    <slot />
     <van-popup v-model="showSideBar" position="left" class="app-sidebar" @click="showSideBar = false">
       <van-cell title="选课" icon="search" is-link to="/home" />
       <van-cell title="我的课程" icon="newspaper-o" is-link to="/my-subject" />
@@ -78,6 +77,11 @@ export default {
   .app-navbar{
     height: 50px;
     overflow: hidden;
+
+  }
+  .app-title{
+     color: #333;
+    font-weight: bold;
   }
   .app-sidebar .van-cell__title {
     text-align-last: justify;

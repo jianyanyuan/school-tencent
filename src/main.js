@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-11 09:22:16
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-13 15:44:57
+ * @LastEditTime: 2020-11-20 14:04:43
  * @Description:
  */
 import Vue from 'vue'
@@ -33,8 +33,11 @@ if (process.env.NODE_ENV === 'production') {
   mockXHR()
 }
 
-Vue.config.productionTip = false
-
+// Vue.config.productionTip = false
+const isDebug_mode = process.env.NODE_ENV !== 'production'
+Vue.config.debug = isDebug_mode
+Vue.config.devtools = isDebug_mode
+Vue.config.productionTip = isDebug_mode
 new Vue({
   el: '#app',
   router,

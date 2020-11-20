@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-17 15:27:20
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-19 13:51:14
+ * @LastEditTime: 2020-11-20 10:50:18
  * @Description:
 -->
 <template>
@@ -16,12 +16,11 @@
     </div>
     <div class="order-detail-m">
       <div class="o-d-c">
+        <span class="o-d-download">报名表</span>
         <!-- <p class="card-id">订单编号：{{ order.id }}</p> -->
-        <ul>
-          <li v-for="s in order.subjects" :key="s.title">
-            {{ s.title }}
-          </li>
-        </ul>
+        <p v-for="s in order.subjects" :key="s.title">
+          {{ s.title }}
+        </p>
         <p class="o-d-amount"><span>{{ order.isFinished ? '实付总额：' : '应付总额：' }}</span><span>￥{{ order.amount }}</span></p>
 
       </div>
@@ -93,12 +92,12 @@ export default {
 <style lang="scss" scoped>
 $grey: #898989;
 $orange: #FD793F;
-
+$blue:#3598FE;
   .o-d-s{
           letter-spacing: 1px;
           padding: 0 10px 20px;
           margin-bottom: 30px;
-    background:  #3598FE;
+    background: $blue ;
     color: #fff;
     p{
       margin: 0;
@@ -118,15 +117,21 @@ $orange: #FD793F;
   padding: 0 10px;
 
   .o-d-c {
-
+    position: relative;
     margin: 10px 0;
     color: $grey;
     background: #fff;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 12px 0 rgba($color: #000000, $alpha: 0.1);
+    .o-d-download{
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      color: $blue;
+    }
   }
-  li {
+  p {
 
     font-weight: bold;
     color: #000;

@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-18 10:02:15
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-18 16:33:14
+ * @LastEditTime: 2020-11-20 10:47:45
  * @Description:
 -->
 <template>
@@ -10,6 +10,7 @@
     <div class="h-s-ul">
       <pull-refresh v-model="refreshLoading" success-text="刷新成功" @refresh="onRefresh">
         <div v-for="(item,index) in subjects" :key="index" class="h-s-item" @click="$router.push({name:'subjectDetail',params:{buyIt:false}})">
+          <span class="h-s-download">报名表</span>
           <h2 class="h-s-title">{{ item.title }}</h2>
           <p class="h-s-tip">课程时间：{{ item.time }} </p>
           <p class="h-s-bottom"><span class="h-s-tip">{{ item.hours }}</span><span class="h-s-amount">￥{{ item.amount }}</span></p>
@@ -208,11 +209,18 @@ $orange: #fd793f;
   }
 
   .h-s-item {
+    position: relative;
     background: #fff;
     border-radius: 10px;
     padding: 5px 10px;
     box-shadow: 0 2px 12px 0 rgba($color: #000000, $alpha: 0.1);
     margin: 15px;
+    .h-s-download{
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      color: $blue;
+    }
     .h-s-title {
       font-size: 18px;
     }

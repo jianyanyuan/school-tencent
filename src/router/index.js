@@ -2,7 +2,7 @@
  * @Author: zfd
  * @Date: 2020-11-11 09:22:16
  * @LastEditors: zfd
- * @LastEditTime: 2020-11-19 13:39:21
+ * @LastEditTime: 2020-11-20 09:32:50
  * @Description:
  */
 import Vue from 'vue'
@@ -177,6 +177,14 @@ export const constantRoutes = [
         component: () => import('@/views/home/detail'),
         meta: {
           title: '课程详情'
+        }
+      },
+      {
+        path: 'report',
+        name: 'subjectReport',
+        component: () => import('@/views/report'),
+        meta: {
+          title: '报名表确认'
         }
       }
     ]
